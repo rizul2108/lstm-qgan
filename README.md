@@ -326,24 +326,7 @@ This will:
 
 ---
 
-### Step 3 — Train with BCE Loss (for comparison)
-
-To reproduce the BCE vs Wasserstein loss comparison from Fig. 7 of the paper:
-
-```bash
-python main.py \
-    --mode train \
-    --loss bce \
-    --epochs 50 \
-    --subset 5000 \
-    --batch_size 32 \
-    --device cuda \
-    --output_dir outputs_bce
-```
-
----
-
-### Step 4 — Train + Evaluate in One Step
+### Step 3 — Train + Evaluate in One Step
 
 ```bash
 python main.py \
@@ -361,7 +344,7 @@ python main.py \
 
 ```
 --mode           train | evaluate | both      (default: both)
---loss           wasserstein | bce            (default: wasserstein)
+--loss           wasserstein                   (default: wasserstein)
 --epochs         int                          (default: 1000)
 --batch_size     int                          (default: 128)
 --n_critic       int  (D steps per G step)   (default: 5)
@@ -386,7 +369,7 @@ python main.py \
 | `outputs/discriminator_final.pth` | Final discriminator weights |
 | `outputs/checkpoint_latest.pth` | Full resumable checkpoint (weights + optimizer states + epoch) |
 | `outputs/generated_images/epoch_XXXX.png` | Sample image grids saved every `ckpt_interval` epochs |
-| `outputs/plots/loss_wasserstein.png` | Generator & discriminator loss curves |
+| `outputs/plots/loss_wasserstein.png` | Generator & discriminator loss curves (Wasserstein) |
 | `outputs/plots/fid_per_class.png` | FID score per digit class (bar chart) |
 | `outputs/generated_grid.png` | Final 10×10 generated image grid |
 
