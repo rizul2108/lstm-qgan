@@ -1,0 +1,33 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+
+.venv/
+venv/
+env/
+
+outputs/
+*.pth
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+
+.DS_Store
+.idea/
+.vscode/
+
+data/MNIST/
+**/data/MNIST/
+
+# training logs
+*.log
+*.err
+
+# outputs_long checkpoints (large — weights kept locally only)
+local_gpu/outputs_long/*.pth
+local_gpu/outputs_long/checkpoint_latest.pth
